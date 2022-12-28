@@ -26,6 +26,7 @@
           <span>{{todo.content}}</span>
 
           <form action="delete/" method="POST">
+            {# {% csrf_token %} #}
             <input type="hidden" name="id" value="{{todo.id}}" />
             <input type="submit" value="Done" />
           </form>
