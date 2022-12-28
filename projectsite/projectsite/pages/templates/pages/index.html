@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>My TODOs</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1 class="title">My TODOs</h1>
+      <h2>Add a TODO</h2>
+      <form class="add_form" action="add/" method="POST">
+        <textarea
+          rows="6"
+          cols="50"
+          name="content"
+          id="content-input"
+        ></textarea>
+        <input type="submit" value="Add" />
+      </form>
+      <h2>Saved TODOs</h2>
+      <div class="todo_list_container">
+        {% for todo in todos %}
+        <div class="todo_container">
+          <span>{{todo.content}}</span>
+
+          <form action="delete/" method="POST">
+            <input type="hidden" name="id" value="{{todo.id}}" />
+            <input type="submit" value="Done" />
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

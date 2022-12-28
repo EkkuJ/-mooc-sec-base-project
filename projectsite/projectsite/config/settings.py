@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os.path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'projectsite.pages'
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'projectsite.urls'
+ROOT_URLCONF = 'projectsite.pages.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +69,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'projectsite.wsgi.application'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+WSGI_APPLICATION = 'projectsite.config.wsgi.application'
 
 
 # Database
