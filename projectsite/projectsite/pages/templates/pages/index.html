@@ -26,7 +26,7 @@
       <div class="todo_list_container">
         {% for todo in todos %}
         <div class="todo_container">
-          <span>{{todo.content}}</span>
+          <span>{{todo.content|safe}}</span>
 
           <form action="delete/" method="POST">
             {# {% csrf_token %} #}
