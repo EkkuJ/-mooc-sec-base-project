@@ -34,6 +34,7 @@ def deleteView(request):
 @login_required
 @csrf_exempt
 def downloadView(request):
+    # user = request.user
     user = request.GET.get('user')
     todos = []
     set = Todo.objects.filter(owner__username=user)
