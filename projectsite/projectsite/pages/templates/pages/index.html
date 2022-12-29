@@ -9,7 +9,7 @@
   <body>
     <div class="wrapper">
       <h1 class="title">My TODOs</h1>
-      <h2>Add a TODO</h2>
+      <h2 class="secondary_title">Add a TODO</h2>
       <form class="add_form" action="add/" method="POST">
         <textarea
           rows="6"
@@ -19,7 +19,10 @@
         ></textarea>
         <input type="submit" value="Add" />
       </form>
-      <h2>Saved TODOs</h2>
+      <div class="saved_title_container">
+        <h2 class="secondary_title">Saved TODOs</h2>
+        <a href="/download?user={{user}}">Download all</a>
+      </div>
       <div class="todo_list_container">
         {% for todo in todos %}
         <div class="todo_container">

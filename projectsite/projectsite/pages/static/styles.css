@@ -9,8 +9,20 @@
 }
 
 .title {
-    margin: 0;
-    padding: 0.3rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.secondary_title {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.saved_title_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .todo_list_container {
